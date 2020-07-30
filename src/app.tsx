@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ReactDom from 'react-dom';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
@@ -14,22 +14,21 @@ interface User {
 }
 
 function App() {
-	const [user, setUser] = useState(get('user'));
-
+	const [user, _] = useState<User>(get('user'));
 	const { name } = user;
 	return (
 		<Router>
 			<Switch>
-				<Route
-					exact
-					path="/"
-					render={() => (
-						<h1>
-							Hi from a React app. <Link to="/second">second page</Link>
-						</h1>
-					)}
-				/>
-				<Route path="/second" render={() => <Second name={name} />} />
+					<Route
+						exact
+						path="/"
+						render={() => (
+							<h1>
+								Hi from a React app. <Link to="/second">second page</Link>
+							</h1>
+						)}
+					/>
+					<Route path="/second" render={() => <Second name={name} />} />
 			</Switch>
 		</Router>
 	);
