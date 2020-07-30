@@ -8,11 +8,9 @@ export const db = low(adapter);
 // Set some defaults (required if your JSON file is empty)
 
 async function seed() {
-	db.defaults({ user: {} })
-		.write()
+	db.defaults({ user: {} }).write();
 
-	db.set('user.name', 'Taylor')
-		.write()
+	db.set('user.name', 'Taylor').write();
 }
 
 seed();
