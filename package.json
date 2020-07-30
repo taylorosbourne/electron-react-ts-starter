@@ -7,7 +7,8 @@
     "dev:electron": "NODE_ENV=development webpack --config config/webpack.electron.config.js --mode development && electron .",
     "dev:react": "NODE_ENV=development webpack-dev-server --config config/webpack.react.config.js --mode development",
     "start": "concurrently \"yarn dev:electron\" \"yarn dev:react\"",
-    "lint": "prettier --write \"**/**/*.{ts,tsx,json}\""
+		"lint": "prettier --write \"**/**/*.{ts,tsx,json}\"",
+		"seed": "ts-node db/seed.ts"
   },
   "husky": {
     "hooks": {
@@ -19,6 +20,7 @@
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
+    "@types/lowdb": "^1.0.9",
     "@types/react": "^16.9.43",
     "@types/react-dom": "^16.9.8",
     "@types/react-router": "^5.1.8",
@@ -31,11 +33,14 @@
     "html-webpack-plugin": "^4.3.0",
     "husky": "^4.2.5",
     "prettier": "^2.0.5",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "lowdb": "^1.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router": "^5.2.0",

@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDom from 'react-dom';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 import { Second } from './pages';
+import { get } from './utils/db-helper';
 
 const mainElement = document.createElement('div');
 
 document.body.appendChild(mainElement);
 
+interface User {
+	name: string;
+}
+
 function App() {
+	const [user, setUser] = useState(get('user'));
+
+	const { name } = user;
 	return (
 		<Router>
 			<Switch>
@@ -21,7 +29,7 @@ function App() {
 						</h1>
 					)}
 				/>
-				<Route path="/second" render={() => <Second name="Taylor" />} />
+				<Route path="/second" render={() => <Second name={name} />} />
 			</Switch>
 		</Router>
 	);
