@@ -6,8 +6,8 @@
   "scripts": {
     "dev:electron": "NODE_ENV=development webpack --config config/webpack.electron.config.js --mode development && electron .",
     "dev:react": "NODE_ENV=development webpack-dev-server --config config/webpack.react.config.js --mode development",
-		"start": "concurrently \"yarn dev:electron\" \"yarn dev:react\"",
-		"lint": "prettier --write \"**/**/*.{ts,tsx,json}\""
+    "start": "concurrently \"yarn dev:electron\" \"yarn dev:react\"",
+    "lint": "prettier --write \"**/**/*.{ts,tsx,json}\""
   },
   "husky": {
     "hooks": {
