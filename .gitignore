@@ -1,0 +1,13 @@
+# General
+.DS_Store
+node_modules/
+.env*
+
+# Compiled
+build
+dist
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
