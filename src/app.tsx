@@ -19,16 +19,16 @@ function App() {
 	return (
 		<Router>
 			<Switch>
-					<Route
-						exact
-						path="/"
-						render={() => (
-							<h1>
-								Hi from a React app. <Link to="/second">second page</Link>
-							</h1>
-						)}
-					/>
-					<Route path="/second" render={() => <Second name={name} />} />
+				<Route
+					exact
+					path="/"
+					render={() => (
+						<h1>
+							Hi from a React app. <Link to="/second">second page</Link>
+						</h1>
+					)}
+				/>
+				<Route path="/second" render={() => <Second name={name} />} />
 			</Switch>
 		</Router>
 	);
